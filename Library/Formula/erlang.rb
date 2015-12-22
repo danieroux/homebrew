@@ -2,32 +2,31 @@
 # Homebrew-versions, and only be merged to master when things like couchdb and
 # elixir are compatible.
 class Erlang < Formula
-  desc "Erlang Programming Language"
+  desc "Programming language for highly scalable real-time systems"
   homepage "http://www.erlang.org"
+  head "https://github.com/erlang/otp.git"
 
   stable do
     # Download tarball from GitHub; it is served faster than the official tarball.
-    url "https://github.com/erlang/otp/archive/OTP-18.1.tar.gz"
-    sha256 "1bb9afabbaf11d929f1ca9593db8b443e51388cdc78bd01267217438de7aed20"
+    url "https://github.com/erlang/otp/archive/OTP-18.2.tar.gz"
+    sha256 "4175ce492f9043dec53880333e12107545ae269d72672ced55d54c7f7b50f829"
   end
-
-  head "https://github.com/erlang/otp.git"
 
   bottle do
     cellar :any
-    sha256 "bf18573b48e421395e4df1b25b6b211b21f3b90319b7098d527884d7292d6cb9" => :el_capitan
-    sha256 "6da625cb19236ae2c0627ae8e1b295e923ada1d54e4ba258c4754680a813a04a" => :yosemite
-    sha256 "79eca633a2d6694827f59360fed2079cec900ed70ba03843288ea734a4e138fb" => :mavericks
+    sha256 "cdc72cec00ee3f25f8120bb8f014f182724f1e1eb00ea34c9c74b3ce4ee020c8" => :el_capitan
+    sha256 "f78f5b2b5dfeff14efe093344577daeb5320066100c67736911757814455bd47" => :yosemite
+    sha256 "1cbe98f152ea2b5ed6147599bf8c371da4d6bb800969222ed135bd4dcde8ce31" => :mavericks
   end
 
   resource "man" do
-    url "http://www.erlang.org/download/otp_doc_man_18.1.tar.gz"
-    sha256 "e080e656820b26dd45d806b632e12eec7d1de34f38e5de19a7aebc9fd6e5c9b6"
+    url "http://www.erlang.org/download/otp_doc_man_18.2.tar.gz"
+    sha256 "3695f3a10652e1e1b06d14639d9690d5e533c5e3b831c37f80214f68b8c56a29"
   end
 
   resource "html" do
-    url "http://www.erlang.org/download/otp_doc_html_18.1.tar.gz"
-    sha256 "fe7d035f84492bbf86f8d53891bf31fa327a81ed7dde15c050e9c32615dceb3c"
+    url "http://www.erlang.org/download/otp_doc_html_18.2.tar.gz"
+    sha256 "15f262ef6b9fb31063d485cf4d0016e22279dabcfa1c9e3670f0c7ca8e84f60f"
   end
 
   option "without-hipe", "Disable building hipe; fails on various OS X systems"
@@ -56,7 +55,7 @@ class Erlang < Formula
     ENV["FOP"] = "#{HOMEBREW_PREFIX}/bin/fop" if build.with? "fop"
 
     # Do this if building from a checkout to generate configure
-    system "./otp_build autoconf" if File.exist? "otp_build"
+    system "./otp_build", "autoconf" if File.exist? "otp_build"
 
     args = %W[
       --disable-debug

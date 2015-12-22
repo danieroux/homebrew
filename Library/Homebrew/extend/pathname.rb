@@ -1,13 +1,10 @@
 require "pathname"
-require "mach"
 require "resource"
 require "metafiles"
 
 # Homebrew extends Ruby's `Pathname` to make our code more readable.
 # @see http://ruby-doc.org/stdlib-1.8.7/libdoc/pathname/rdoc/Pathname.html  Ruby's Pathname API
 class Pathname
-  include MachO
-
   # @private
   BOTTLE_EXTNAME_RX = /(\.[a-z0-9_]+\.bottle\.(\d+\.)?tar\.gz)$/
 
@@ -138,16 +135,6 @@ class Pathname
   end
   private :default_stat
 
-  # @private
-  def cp(dst)
-    opoo "Pathname#cp is deprecated, use FileUtils.cp"
-    if file?
-      FileUtils.cp to_s, dst
-    else
-      FileUtils.cp_r to_s, dst
-    end
-    dst
-  end
 
   # @private
   def cp_path_sub(pattern, replacement)
@@ -201,12 +188,6 @@ class Pathname
     false
   end
 
-  # @private
-  def chmod_R(perms)
-    opoo "Pathname#chmod_R is deprecated, use FileUtils.chmod_R"
-    require "fileutils"
-    FileUtils.chmod_R perms, to_s
-  end
 
   # @private
   def version

@@ -1,13 +1,13 @@
 class GdkPixbuf < Formula
   desc "Toolkit for image loading and pixel buffer manipulation"
   homepage "http://gtk.org"
-  url "https://download.gnome.org/sources/gdk-pixbuf/2.32/gdk-pixbuf-2.32.1.tar.xz"
-  sha256 "4432b74f25538c7d6bcb3ca51adabdd666168955f25812a2568dc9637697f3bc"
+  url "https://download.gnome.org/sources/gdk-pixbuf/2.32/gdk-pixbuf-2.32.3.tar.xz"
+  sha256 "2b6771f1ac72f687a8971e59810b8dc658e65e7d3086bd2e676e618fd541d031"
 
   bottle do
-    sha256 "62f6a4d7d312267fdfda5d1497de9af7fe4d8e731f888bb761a516c8f0e9cfa3" => :el_capitan
-    sha256 "db7eb28768b50cd806b6d5cf3703a844982b28ded88696cd1656e03a6ce7abae" => :yosemite
-    sha256 "ede7421c79f4a8ca9e3ed4fdbaeab6b6e9711fc2a26526d341c6a134d8130a4e" => :mavericks
+    sha256 "eb8c35bdc91653f7e10b48d2933ff2012027f1495b26b3290887993adb1c02aa" => :el_capitan
+    sha256 "f9a0c8f025b0a7365440e8e28152087285026ab26df0b3de33aa7b45588e0254" => :yosemite
+    sha256 "00f0d5386d69dbd87fcd2ef6e84a8f57e5cea354abcc307dec0b3c684593c31c" => :mavericks
   end
 
   option :universal
