@@ -1,5 +1,5 @@
 class DynamodbLocal < Formula
-  desc "Cient-side database and server imitating DynamoDB"
+  desc "Client-side database and server imitating DynamoDB"
   homepage "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.DynamoDBLocal.html"
   url "https://dynamodb-local.s3.amazonaws.com/dynamodb_local_2015-07-16_1.0.tar.gz"
   version "2015-07-16_1.0"
@@ -59,7 +59,7 @@ class DynamodbLocal < Formula
       <false/>
       <key>ProgramArguments</key>
       <array>
-        <string>#{bin}/dynamodb-local</string>
+        <string>#{opt_bin}/dynamodb-local</string>
       </array>
       <key>StandardErrorPath</key>
       <string>#{log_path}</string>

@@ -1,14 +1,15 @@
 class Wireshark < Formula
   desc "Graphical network analyzer and capture tool"
   homepage "https://www.wireshark.org"
-  url "https://www.wireshark.org/download/src/all-versions/wireshark-2.0.0.tar.bz2"
-  mirror "https://1.eu.dl.wireshark.org/src/wireshark-2.0.0.tar.bz2"
-  sha256 "90026c761a85701d7783c7e2eaa4c1de247dfbadbd53221df355f121e42691dd"
+  url "https://www.wireshark.org/download/src/all-versions/wireshark-2.0.1.tar.bz2"
+  mirror "https://1.eu.dl.wireshark.org/src/wireshark-2.0.1.tar.bz2"
+  sha256 "c9bd07dd0d0045d6ca7537390a1afbcdf33716d193ea7d7084ae4f6c30b683ab"
+  revision 1
 
   bottle do
-    sha256 "37e8b1ec77e0e60d6a4060172afefbffd8994772a46b3e897c4d4aa9e1820c7b" => :el_capitan
-    sha256 "c9a86648d35c27f7a6f910b56e8663ba6524b7e4705af9571ec1033028bbfef6" => :yosemite
-    sha256 "84f4facef2eddb52ad403eae4d3e8aeda9b0a4b73a10b6ebf3640c397509aa0e" => :mavericks
+    sha256 "f9251b00cf5ba7e45016e2ce13dccae979e0bf72e0dd47b415920069db3d9eeb" => :el_capitan
+    sha256 "88b9017a72c477adc9f8fd91171e5f2ae541d375dc79e77342f9dd152149c208" => :yosemite
+    sha256 "a263818e06ec83d18c60683125507b5750a3bd19cd045e23eba2c785273ba62c" => :mavericks
   end
 
   head do
@@ -45,8 +46,8 @@ class Wireshark < Formula
   depends_on "gnome-icon-theme" if build.with? "gtk+3"
 
   resource "libpcap" do
-    url "http://www.tcpdump.org/release/libpcap-1.5.3.tar.gz"
-    sha256 "9ae92159c1060f15e6a90f2c4ad227268b6aaa382c316fa49a31c496b9979e93"
+    url "http://www.tcpdump.org/release/libpcap-1.7.4.tar.gz"
+    sha256 "7ad3112187e88328b85e46dce7a9b949632af18ee74d97ffc3f2b41fe7f448b0"
   end
 
   def install
